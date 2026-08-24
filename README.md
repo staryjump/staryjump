@@ -1203,8 +1203,7 @@
 
                 <a
                     class="social"
-                href="https://www.roblox.com/share
-                code=dda92c69ae24364fa71dc8949b1fbd41&type=Profile&source=ProfileShare&stamp=1787535416100"
+                href="https://www.roblox.com/users/2345430371/profile"
                     target="_blank"
                 >
 
