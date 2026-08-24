@@ -410,7 +410,7 @@
             gap: 25px;
         }
 
-        .work-card {
+         .work-card {
             display: grid;
 
             grid-template-columns: 280px 1fr;
