@@ -438,8 +438,8 @@
         }
 
         .work-image {
-    width: 280px;
-    height: 280px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     background: #181820;
     display: block;
