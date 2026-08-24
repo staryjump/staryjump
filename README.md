@@ -413,9 +413,9 @@
          .work-card {
             display: grid;
 
-            grid-template-columns: 200px 1fr;
+            grid-template-columns: 280px 1fr;
 
-            min-height: 200px;
+            min-height: 150px;
 
             overflow: hidden;
 
