@@ -1330,20 +1330,20 @@
 
     <div class="work-content">
 
-        <h3 class="Aquatic Pool">
-            Company Name
+        <h3 class="work-company">
+            Aquatic Pool
         </h3>
 
-        <div class="Junior Corporate Rang">
-            Your Role
+        <div class="work-role">
+            Junior Corporate Rang
         </div>
 
-        <div class="May 2025 - Present">
-            2026
+        <div class="work-date">
+            May 2025 - Present
         </div>
 
         <p>
-            Write your experience description here.
+            
         </p>
 
     </div>
