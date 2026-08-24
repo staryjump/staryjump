@@ -1260,7 +1260,7 @@
                     </div>
 
                     <div class="work-date">
-                        2026
+                        April 2026 - Present
                     </div>
 
                     <p>
@@ -1300,7 +1300,7 @@
                     </div>
 
                     <div class="work-date">
-                        2026
+                        May 2026 - Present
                     </div>
 
                     <p>
@@ -1322,7 +1322,7 @@
 
         <img
             class="work-image"
-            src="experience3.png"
+            src="aquaticpool.png"
             alt="Company Name"
         >
 
@@ -1330,15 +1330,15 @@
 
     <div class="work-content">
 
-        <h3 class="work-company">
+        <h3 class="Aquatic Pool">
             Company Name
         </h3>
 
-        <div class="work-role">
+        <div class="Junior Corporate Rang">
             Your Role
         </div>
 
-        <div class="work-date">
+        <div class="May 2025 - Present">
             2026
         </div>
 
