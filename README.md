@@ -1159,7 +1159,7 @@
 
                 <a
                     class="social"
-                    href="href="https://discord.com/users/1088893328994619504"
+                    href="https://discord.com/users/1088893328994619504"
                     target="_blank"
                 >
 
