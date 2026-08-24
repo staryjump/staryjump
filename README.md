@@ -1312,6 +1312,122 @@
 
             </div>
 
+                  <!-- =========================
+     EXPERIENCE 3
+========================= -->
+
+<div class="work-card">
+
+    <div class="work-image-wrapper">
+
+        <img
+            class="work-image"
+            src="experience3.png"
+            alt="Company Name"
+        >
+
+    </div>
+
+    <div class="work-content">
+
+        <h3 class="work-company">
+            Company Name
+        </h3>
+
+        <div class="work-role">
+            Your Role
+        </div>
+
+        <div class="work-date">
+            2026
+        </div>
+
+        <p>
+            Write your experience description here.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     EXPERIENCE 4
+========================= -->
+
+<div class="work-card">
+
+    <div class="work-image-wrapper">
+
+        <img
+            class="work-image"
+            src="experience4.png"
+            alt="Company Name"
+        >
+
+    </div>
+
+    <div class="work-content">
+
+        <h3 class="work-company">
+            Company Name
+        </h3>
+
+        <div class="work-role">
+            Your Role
+        </div>
+
+        <div class="work-date">
+            2026
+        </div>
+
+        <p>
+            Write your experience description here.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     EXPERIENCE 5
+========================= -->
+
+<div class="work-card">
+
+    <div class="work-image-wrapper">
+
+        <img
+            class="work-image"
+            src="experience5.png"
+            alt="Company Name"
+        >
+
+    </div>
+
+    <div class="work-content">
+
+        <h3 class="work-company">
+            Company Name
+        </h3>
+
+        <div class="work-role">
+            Your Role
+        </div>
+
+        <div class="work-date">
+            2026
+        </div>
+
+        <p>
+            Write your experience description here.
+        </p>
+
+    </div>
+
+</div> 
+  
 
             <!-- =========================
                  ADD MORE EXPERIENCES HERE
