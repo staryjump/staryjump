@@ -1376,7 +1376,7 @@
         </div>
 
         <div class="work-date">
-            Januar 2026 - Present">
+            Januar 2026 - Present
         </div>
 
         <p>
@@ -1398,7 +1398,7 @@
 
         <img
             class="work-image"
-            src="experience5.png"
+            src="coffeeloverscommunity.png"
             alt="Company Name"
         >
 
@@ -1407,19 +1407,19 @@
     <div class="work-content">
 
         <h3 class="work-company">
-            Company Name
+            Coffee Lovers Community
         </h3>
 
         <div class="work-role">
-            Your Role
+            President
         </div>
 
         <div class="work-date">
-            2026
+            March 2026 - Present 
         </div>
 
         <p>
-            Write your experience description here.
+            
         </p>
 
     </div>
