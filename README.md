@@ -1159,7 +1159,7 @@
 
                 <a
                     class="social"
-                    href="TON_DISCORD_LINK"
+                    href="href="https://discord.com/users/1088893328994619504"
                     target="_blank"
                 >
 
@@ -1203,7 +1203,8 @@
 
                 <a
                     class="social"
-                    href="TON_ROBLOX_LINK"
+                href="https://www.roblox.com/share
+                code=dda92c69ae24364fa71dc8949b1fbd41&type=Profile&source=ProfileShare&stamp=1787535416100"
                     target="_blank"
                 >
 
