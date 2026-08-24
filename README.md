@@ -1264,8 +1264,7 @@
                     </div>
 
                     <p>
-                        Experience in store management within
-                        the Roblox environment.
+                    
                     </p>
 
                 </div>
@@ -1304,8 +1303,7 @@
                     </div>
 
                     <p>
-                        Experience as a Corporate Intern within
-                        a Roblox corporate environment.
+                        
                     </p>
 
                 </div>
@@ -1339,7 +1337,7 @@
         </div>
 
         <div class="work-date">
-            May 2025 - Present
+            March 2026 - Present
         </div>
 
         <p>
@@ -1361,7 +1359,7 @@
 
         <img
             class="work-image"
-            src="experience4.png"
+            src="washiez.png"
             alt="Company Name"
         >
 
@@ -1370,19 +1368,19 @@
     <div class="work-content">
 
         <h3 class="work-company">
-            Company Name
+            Washiez 
         </h3>
 
         <div class="work-role">
-            Your Role
+            General Manager 
         </div>
 
         <div class="work-date">
-            2026
+            Januar 2026 - Present">
         </div>
 
         <p>
-            Write your experience description here.
+            
         </p>
 
     </div>
