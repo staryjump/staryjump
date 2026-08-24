@@ -998,11 +998,7 @@
 
             <!-- One image for the skills section -->
 
-            <img
-                class="skills-image"
-                src="skills.png"
-                alt="Skills"
-            >
+            
 
         </div>
 
