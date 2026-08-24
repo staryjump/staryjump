@@ -1362,12 +1362,11 @@
                 </h3>
 
                 <p>
-                    A Roblox Dropper game currently in development.
-                    The map and environment were created from scratch.
+                   A Roblox Dropper project created to test gameplay ideas, map design and different mechanics.
                 </p>
 
                 <span class="status">
-                    In Development
+                    Test Project
                 </span>
 
             </div>
