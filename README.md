@@ -113,7 +113,7 @@
             background: rgba(9, 9, 15, 0.72);
             backdrop-filter: blur(18px);
 
-            border-bottom: 1px solid rgba(255,255,255,0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 
             z-index: 1000;
 
@@ -211,6 +211,8 @@
 
             display: flex;
             align-items: center;
+
+            position: relative;
         }
 
         .hero-content {
@@ -433,51 +435,108 @@
 
 
         /* =========================
-           WHAT I WORK WITH
+           SKILLS
         ========================= */
 
-        .work-with {
-            margin-top: 30px;
+        .skills {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 15px;
         }
 
-        .work-with-title {
-            color: white;
+        .skill {
+            position: relative;
 
-            font-size: 19px;
+            padding: 24px;
 
-            margin-bottom: 13px;
-        }
-
-        .work-with-list {
-            display: flex;
-            flex-wrap: wrap;
-
-            gap: 10px;
-        }
-
-        .work-with-item {
-            padding: 9px 14px;
-
-            color: #aaaab5;
-
-            background: rgba(17,17,24,0.8);
+            background: rgba(17, 17, 24, 0.85);
 
             border: 1px solid #252530;
 
-            border-radius: 9px;
+            border-radius: 15px;
 
-            transition: 0.25s;
+            overflow: hidden;
+
+            transition:
+                transform 0.3s,
+                border-color 0.3s,
+                box-shadow 0.3s;
         }
 
-        .work-with-item:hover {
-            color: white;
+        .skill::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 2px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                #7657ff,
+                transparent
+            );
+
+            transform: translateX(-100%);
+
+            transition: 0.5s;
+        }
+
+        .skill:hover {
+            transform: translateY(-6px);
 
             border-color: #7657ff;
 
-            transform: translateY(-3px);
-
             box-shadow:
-                0 8px 25px rgba(118, 87, 255, 0.12);
+                0 14px 35px rgba(118, 87, 255, 0.12);
+        }
+
+        .skill:hover::before {
+            transform: translateX(100%);
+        }
+
+        .skill-top {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 8px;
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #1a1925;
+
+            border: 1px solid #302d47;
+
+            font-size: 19px;
+        }
+
+        .skill h3 {
+            font-size: 19px;
+        }
+
+        .skill p {
+            color: #777783;
+
+            font-size: 14px;
         }
 
 
@@ -518,7 +577,7 @@
             border-color: #7657ff;
 
             box-shadow:
-                0 20px 45px rgba(0,0,0,0.3);
+                0 20px 45px rgba(0, 0, 0, 0.3);
         }
 
         .work-image-wrapper {
@@ -581,18 +640,6 @@
 
 
         /* =========================
-           ADD EXPERIENCE
-        ========================= */
-
-        /*
-           Pour ajouter une nouvelle expérience,
-           copie simplement un .work-card existant
-           et change l'image, le nom, le rôle,
-           la date et la description.
-        */
-
-
-        /* =========================
            PROJECTS
         ========================= */
 
@@ -617,7 +664,7 @@
             border-color: #7657ff;
 
             box-shadow:
-                0 20px 45px rgba(0,0,0,0.3);
+                0 20px 45px rgba(0, 0, 0, 0.3);
         }
 
         .project-image-wrapper {
@@ -684,7 +731,7 @@
 
             text-align: center;
 
-            background: rgba(17,17,24,0.85);
+            background: rgba(17, 17, 24, 0.85);
 
             border: 1px solid #252530;
 
@@ -740,7 +787,8 @@
             transition:
                 transform 0.25s,
                 border-color 0.25s,
-                background 0.25s;
+                background 0.25s,
+                box-shadow 0.25s;
         }
 
         .social svg {
@@ -758,7 +806,7 @@
             background: #171522;
 
             box-shadow:
-                0 10px 30px rgba(118,87,255,0.12);
+                0 10px 30px rgba(118, 87, 255, 0.12);
         }
 
 
@@ -797,18 +845,6 @@
             opacity: 1;
 
             transform: translateY(0);
-        }
-
-        .animate-delay-1 {
-            transition-delay: 0.1s;
-        }
-
-        .animate-delay-2 {
-            transition-delay: 0.2s;
-        }
-
-        .animate-delay-3 {
-            transition-delay: 0.3s;
         }
 
 
@@ -857,6 +893,10 @@
 
             .section-title {
                 font-size: 31px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
             }
 
             .work-card {
@@ -912,9 +952,7 @@
     <div class="background">
 
         <div class="blob one"></div>
-
         <div class="blob two"></div>
-
         <div class="blob three"></div>
 
     </div>
@@ -934,6 +972,10 @@
 
             <a href="#about">
                 About
+            </a>
+
+            <a href="#skills">
+                Skills
             </a>
 
             <a href="#experience">
@@ -1041,36 +1083,6 @@
                     I create.
                 </p>
 
-                <!-- WHAT I WORK WITH -->
-
-                <div class="work-with">
-
-                    <h3 class="work-with-title">
-                        What I Work With
-                    </h3>
-
-                    <div class="work-with-list">
-
-                        <div class="work-with-item">
-                            Luau
-                        </div>
-
-                        <div class="work-with-item">
-                            Building
-                        </div>
-
-                        <div class="work-with-item">
-                            HTML
-                        </div>
-
-                        <div class="work-with-item">
-                            JavaScript
-                        </div>
-
-                    </div>
-
-                </div>
-
                 <div class="facts">
 
                     <div class="fact">
@@ -1092,6 +1104,116 @@
                 </div>
 
             </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills" class="animate">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills">
+
+
+            <!-- LUAU -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <div class="skill-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Luau
+                    </h3>
+
+                </div>
+
+                <p>
+                    Roblox scripting.
+                </p>
+
+            </div>
+
+
+            <!-- BUILDING -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <div class="skill-icon">
+                        🧱
+                    </div>
+
+                    <h3>
+                        Building
+                    </h3>
+
+                </div>
+
+                <p>
+                    Maps and environments.
+                </p>
+
+            </div>
+
+
+            <!-- HTML / CSS -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <div class="skill-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        HTML / CSS
+                    </h3>
+
+                </div>
+
+                <p>
+                    Web design.
+                </p>
+
+            </div>
+
+
+            <!-- JAVASCRIPT -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <div class="skill-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        JavaScript
+                    </h3>
+
+                </div>
+
+                <p>
+                    Web development.
+                </p>
+
+            </div>
+
 
         </div>
 
@@ -1191,21 +1313,19 @@
             </div>
 
 
-            <!--
-                =========================
-                AJOUTER UNE NOUVELLE EXPÉRIENCE
+            <!-- =========================
+                 ADD MORE EXPERIENCES HERE
+                 
+                 Copy a complete .work-card
+                 and change:
 
-                Copie le bloc .work-card ci-dessus
-                et modifie uniquement :
+                 1. image
+                 2. company name
+                 3. role
+                 4. date
+                 5. description
 
-                - l'image
-                - le nom
-                - le rôle
-                - la date
-                - la description
-
-                =========================
-            -->
+                 ========================= -->
 
 
         </div>
@@ -1222,7 +1342,6 @@
         <h2 class="section-title">
             My <span>Projects</span>
         </h2>
-
 
         <div class="project-card">
 
@@ -1273,7 +1392,6 @@
             <p class="text">
                 You can find me on the platforms below.
             </p>
-
 
             <div class="socials">
 
@@ -1416,7 +1534,6 @@
 
         const navbar =
             document.getElementById("navbar");
-
 
         window.addEventListener("scroll", () => {
 
