@@ -53,43 +53,43 @@
 
         .blob {
             position: absolute;
-            width: 320px;
-            height: 320px;
+            width: 350px;
+            height: 350px;
             border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.12;
-            animation: floating 9s ease-in-out infinite;
+            filter: blur(130px);
+            opacity: 0.13;
+            animation: floating 12s ease-in-out infinite;
         }
 
         .blob.one {
             background: #7c5cff;
-            top: -120px;
-            left: -100px;
+            top: -140px;
+            left: -120px;
         }
 
         .blob.two {
             background: #00b7ff;
-            right: -120px;
+            right: -140px;
             top: 40%;
-            animation-delay: -3s;
+            animation-delay: -4s;
         }
 
         .blob.three {
             background: #ff4fd8;
-            bottom: -160px;
+            bottom: -170px;
             left: 35%;
-            animation-delay: -6s;
+            animation-delay: -8s;
         }
 
         @keyframes floating {
 
             0%,
             100% {
-                transform: translate(0, 0);
+                transform: translate(0, 0) scale(1);
             }
 
             50% {
-                transform: translate(30px, -35px);
+                transform: translate(35px, -40px) scale(1.08);
             }
         }
 
@@ -110,12 +110,20 @@
             justify-content: space-between;
             align-items: center;
 
-            background: rgba(9, 9, 15, 0.78);
-            backdrop-filter: blur(15px);
+            background: rgba(9, 9, 15, 0.72);
+            backdrop-filter: blur(18px);
 
             border-bottom: 1px solid rgba(255,255,255,0.07);
 
             z-index: 1000;
+
+            transition: 0.3s;
+        }
+
+        nav.scrolled {
+            padding-top: 13px;
+            padding-bottom: 13px;
+            background: rgba(9, 9, 15, 0.9);
         }
 
         .logo {
@@ -134,13 +142,36 @@
         }
 
         .nav-links a {
+            position: relative;
+
             color: #92929d;
             text-decoration: none;
+
+            transition: 0.25s;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -6px;
+
+            width: 0;
+            height: 2px;
+
+            background: #8b6cff;
+
             transition: 0.25s;
         }
 
         .nav-links a:hover {
             color: white;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
 
@@ -183,14 +214,14 @@
         }
 
         .hero-content {
-            animation: appear 1s ease forwards;
+            animation: heroAppear 1s ease forwards;
         }
 
-        @keyframes appear {
+        @keyframes heroAppear {
 
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(35px);
             }
 
             to {
@@ -215,6 +246,33 @@
             letter-spacing: -4px;
 
             margin-bottom: 20px;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #b9adff,
+                #ffffff
+            );
+
+            background-size: 200% auto;
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            animation: titleGlow 5s linear infinite;
+        }
+
+        @keyframes titleGlow {
+
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
         }
 
         .hero h2 {
@@ -253,7 +311,10 @@
             border: 1px solid #33333e;
             border-radius: 9px;
 
-            transition: 0.25s;
+            transition:
+                transform 0.3s,
+                border-color 0.3s,
+                box-shadow 0.3s;
         }
 
         .button.primary {
@@ -262,12 +323,39 @@
         }
 
         .button:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
 
             border-color: #8b6cff;
 
             box-shadow:
-                0 10px 30px rgba(118, 87, 255, 0.2);
+                0 12px 35px rgba(118, 87, 255, 0.25);
+        }
+
+        .scroll-hint {
+            position: absolute;
+
+            bottom: 30px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: #666673;
+
+            font-size: 13px;
+
+            animation: scrollBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollBounce {
+
+            0%,
+            100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, 8px);
+            }
         }
 
 
@@ -297,13 +385,19 @@
 
             border: 1px solid #292936;
 
-            transition: 0.4s;
+            transition:
+                transform 0.4s,
+                border-color 0.4s,
+                box-shadow 0.4s;
         }
 
         .profile:hover {
-            transform: rotate(-2deg) scale(1.03);
+            transform: rotate(-2deg) scale(1.04);
 
             border-color: #7657ff;
+
+            box-shadow:
+                0 20px 50px rgba(118, 87, 255, 0.18);
         }
 
         .facts {
@@ -325,78 +419,65 @@
             border: 1px solid #252530;
 
             border-radius: 8px;
+
+            transition: 0.25s;
+        }
+
+        .fact:hover {
+            color: white;
+
+            border-color: #7657ff;
+
+            transform: translateY(-3px);
         }
 
 
         /* =========================
-           SKILLS
+           WHAT I WORK WITH
         ========================= */
 
-        .skills-layout {
-            display: grid;
-
-            grid-template-columns: 1fr 300px;
-
-            gap: 35px;
-
-            align-items: center;
+        .work-with {
+            margin-top: 30px;
         }
 
-        .skills {
-            display: grid;
+        .work-with-title {
+            color: white;
 
-            grid-template-columns: repeat(2, 1fr);
+            font-size: 19px;
 
-            gap: 14px;
+            margin-bottom: 13px;
         }
 
-        .skill {
-            padding: 20px;
+        .work-with-list {
+            display: flex;
+            flex-wrap: wrap;
 
-            background: rgba(17,17,24,0.85);
+            gap: 10px;
+        }
+
+        .work-with-item {
+            padding: 9px 14px;
+
+            color: #aaaab5;
+
+            background: rgba(17,17,24,0.8);
 
             border: 1px solid #252530;
 
-            border-radius: 14px;
+            border-radius: 9px;
 
-            transition: 0.3s;
+            transition: 0.25s;
         }
 
-        .skill:hover {
-            transform: translateY(-5px);
+        .work-with-item:hover {
+            color: white;
 
             border-color: #7657ff;
-        }
 
-        .skill h3 {
-            margin-bottom: 5px;
-        }
+            transform: translateY(-3px);
 
-        .skill p {
-            color: #777783;
-
-            font-size: 14px;
-        }
-
-        .skills-image {
-            width: 100%;
-            height: 300px;
-
-            object-fit: cover;
-
-            border-radius: 18px;
-
-            border: 1px solid #292936;
-
-            background: #111118;
-
-            transition: 0.4s;
-        }
-
-        .skills-image:hover {
-            transform: scale(1.02);
-
-            border-color: #7657ff;
+            box-shadow:
+                0 8px 25px rgba(118, 87, 255, 0.12);
         }
 
 
@@ -410,12 +491,12 @@
             gap: 25px;
         }
 
-         .work-card {
+        .work-card {
             display: grid;
 
             grid-template-columns: 280px 1fr;
 
-            min-height: 150px;
+            min-height: 280px;
 
             overflow: hidden;
 
@@ -425,33 +506,51 @@
 
             border-radius: 18px;
 
-            transition: 0.35s;
+            transition:
+                transform 0.35s,
+                border-color 0.35s,
+                box-shadow 0.35s;
         }
 
         .work-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-7px);
 
             border-color: #7657ff;
 
             box-shadow:
-                0 15px 40px rgba(0,0,0,0.25);
+                0 20px 45px rgba(0,0,0,0.3);
         }
 
-        .work-image {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    background: #181820;
-    display: block;
-}
+        .work-image-wrapper {
+            width: 280px;
+            height: 280px;
 
-            object-fit: cover;
+            overflow: hidden;
 
             background: #181820;
         }
 
+        .work-image {
+            width: 280px;
+            height: 280px;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.5s ease;
+        }
+
+        .work-card:hover .work-image {
+            transform: scale(1.07);
+        }
+
         .work-content {
             padding: 28px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .work-company {
@@ -482,6 +581,18 @@
 
 
         /* =========================
+           ADD EXPERIENCE
+        ========================= */
+
+        /*
+           Pour ajouter une nouvelle expérience,
+           copie simplement un .work-card existant
+           et change l'image, le nom, le rôle,
+           la date et la description.
+        */
+
+
+        /* =========================
            PROJECTS
         ========================= */
 
@@ -494,13 +605,28 @@
 
             border-radius: 18px;
 
-            transition: 0.35s;
+            transition:
+                transform 0.35s,
+                border-color 0.35s,
+                box-shadow 0.35s;
         }
 
         .project-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-7px);
 
             border-color: #7657ff;
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.3);
+        }
+
+        .project-image-wrapper {
+            width: 100%;
+            height: 360px;
+
+            overflow: hidden;
+
+            background: #171720;
         }
 
         .project-image {
@@ -511,7 +637,11 @@
 
             display: block;
 
-            background: #171720;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.04);
         }
 
         .project-content {
@@ -559,6 +689,12 @@
             border: 1px solid #252530;
 
             border-radius: 20px;
+
+            transition: 0.35s;
+        }
+
+        .contact-box:hover {
+            border-color: #343344;
         }
 
         .contact-box .text {
@@ -601,7 +737,10 @@
 
             border-radius: 10px;
 
-            transition: 0.25s;
+            transition:
+                transform 0.25s,
+                border-color 0.25s,
+                background 0.25s;
         }
 
         .social svg {
@@ -617,6 +756,9 @@
             border-color: #7657ff;
 
             background: #171522;
+
+            box-shadow:
+                0 10px 30px rgba(118,87,255,0.12);
         }
 
 
@@ -644,17 +786,29 @@
         .animate {
             opacity: 0;
 
-            transform: translateY(25px);
+            transform: translateY(35px);
 
             transition:
-                opacity 0.7s ease,
-                transform 0.7s ease;
+                opacity 0.8s ease,
+                transform 0.8s ease;
         }
 
         .animate.show {
             opacity: 1;
 
             transform: translateY(0);
+        }
+
+        .animate-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .animate-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .animate-delay-3 {
+            transition-delay: 0.3s;
         }
 
 
@@ -686,6 +840,10 @@
                 font-size: 21px;
             }
 
+            .scroll-hint {
+                display: none;
+            }
+
             .about-grid {
                 grid-template-columns: 1fr;
 
@@ -697,30 +855,34 @@
                 height: 210px;
             }
 
-            .skills-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .skills {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-image {
-                height: 230px;
-            }
-
             .section-title {
                 font-size: 31px;
             }
 
             .work-card {
                 grid-template-columns: 1fr;
+
+                min-height: 0;
+            }
+
+            .work-image-wrapper {
+                width: 100%;
+                height: auto;
+
+                aspect-ratio: 1 / 1;
             }
 
             .work-image {
-                height: 220px;
+                width: 100%;
+                height: 100%;
+            }
 
-                min-height: 0;
+            .work-content {
+                padding: 25px;
+            }
+
+            .project-image-wrapper {
+                height: 230px;
             }
 
             .project-image {
@@ -732,6 +894,7 @@
 
                 justify-content: center;
             }
+
         }
 
     </style>
@@ -761,7 +924,7 @@
          NAVIGATION
     ========================= -->
 
-    <nav>
+    <nav id="navbar">
 
         <div class="logo">
             Stary<span>jump</span>
@@ -771,10 +934,6 @@
 
             <a href="#about">
                 About
-            </a>
-
-            <a href="#skills">
-                Skills
             </a>
 
             <a href="#experience">
@@ -840,6 +999,10 @@
 
         </div>
 
+        <div class="scroll-hint">
+            ↓ Scroll
+        </div>
+
     </section>
 
 
@@ -878,6 +1041,36 @@
                     I create.
                 </p>
 
+                <!-- WHAT I WORK WITH -->
+
+                <div class="work-with">
+
+                    <h3 class="work-with-title">
+                        What I Work With
+                    </h3>
+
+                    <div class="work-with-list">
+
+                        <div class="work-with-item">
+                            Luau
+                        </div>
+
+                        <div class="work-with-item">
+                            Building
+                        </div>
+
+                        <div class="work-with-item">
+                            HTML
+                        </div>
+
+                        <div class="work-with-item">
+                            JavaScript
+                        </div>
+
+                    </div>
+
+                </div>
+
                 <div class="facts">
 
                     <div class="fact">
@@ -906,109 +1099,6 @@
 
 
     <!-- =========================
-         SKILLS
-    ========================= -->
-
-    <section id="skills" class="animate">
-
-        <h2 class="section-title">
-            My <span>Skills</span>
-        </h2>
-
-        <div class="skills-layout">
-
-            <div class="skills">
-
-                <div class="skill">
-
-                    <h3>
-                        Luau
-                    </h3>
-
-                    <p>
-                        Roblox scripting.
-                    </p>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <h3>
-                        Roblox Studio
-                    </h3>
-
-                    <p>
-                        Creating Roblox projects.
-                    </p>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <h3>
-                        Building
-                    </h3>
-
-                    <p>
-                        Creating environments and structures.
-                    </p>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <h3>
-                        HTML
-                    </h3>
-
-                    <p>
-                        Creating web pages.
-                    </p>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <h3>
-                        JavaScript
-                    </h3>
-
-                    <p>
-                        Learning web development.
-                    </p>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <h3>
-                        Game Development
-                    </h3>
-
-                    <p>
-                        Working on game projects.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- One image for the skills section -->
-
-            
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
          WORK HISTORY
     ========================= -->
 
@@ -1021,15 +1111,21 @@
         <div class="work-list">
 
 
-            <!-- FRESHLY -->
+            <!-- =========================
+                 FRESHLY
+            ========================= -->
 
             <div class="work-card">
 
-                <img
-                    class="work-image"
-                    src="freshly.png"
-                    alt="Freshly"
-                >
+                <div class="work-image-wrapper">
+
+                    <img
+                        class="work-image"
+                        src="freshly.png"
+                        alt="Freshly"
+                    >
+
+                </div>
 
                 <div class="work-content">
 
@@ -1038,7 +1134,7 @@
                     </h3>
 
                     <div class="work-role">
-                        Store Manager 
+                        Store Management
                     </div>
 
                     <div class="work-date">
@@ -1055,15 +1151,21 @@
             </div>
 
 
-            <!-- NEXO CORPORATION -->
+            <!-- =========================
+                 NEXO CORPORATION
+            ========================= -->
 
             <div class="work-card">
 
-                <img
-                    class="work-image"
-                    src="nexo.png"
-                    alt="Nexo Corporation"
-                >
+                <div class="work-image-wrapper">
+
+                    <img
+                        class="work-image"
+                        src="nexo.png"
+                        alt="Nexo Corporation"
+                    >
+
+                </div>
 
                 <div class="work-content">
 
@@ -1089,6 +1191,23 @@
             </div>
 
 
+            <!--
+                =========================
+                AJOUTER UNE NOUVELLE EXPÉRIENCE
+
+                Copie le bloc .work-card ci-dessus
+                et modifie uniquement :
+
+                - l'image
+                - le nom
+                - le rôle
+                - la date
+                - la description
+
+                =========================
+            -->
+
+
         </div>
 
     </section>
@@ -1107,11 +1226,15 @@
 
         <div class="project-card">
 
-            <img
-                class="project-image"
-                src="project1.png"
-                alt="Dropper Game"
-            >
+            <div class="project-image-wrapper">
+
+                <img
+                    class="project-image"
+                    src="project1.png"
+                    alt="Dropper Game"
+                >
+
+            </div>
 
             <div class="project-content">
 
@@ -1161,6 +1284,7 @@
                     class="social"
                     href="https://discord.com/users/1088893328994619504"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
 
                     <svg
@@ -1183,6 +1307,7 @@
                     class="social"
                     href="TON_GITHUB_LINK"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
 
                     <svg
@@ -1203,8 +1328,9 @@
 
                 <a
                     class="social"
-                href="https://www.roblox.com/users/2345430371/profile"
+                    href="https://www.roblox.com/share?code=dda92c69ae24364fa71dc8949b1fbd41&type=Profile&source=ProfileShare&stamp=1787535416100"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
 
                     <svg
@@ -1242,10 +1368,14 @@
 
 
     <!-- =========================
-         ANIMATIONS
+         JAVASCRIPT
     ========================= -->
 
     <script>
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
 
         const elements =
             document.querySelectorAll(".animate");
@@ -1259,6 +1389,8 @@
                         if (entry.isIntersecting) {
 
                             entry.target.classList.add("show");
+
+                            observer.unobserve(entry.target);
 
                         }
 
@@ -1274,6 +1406,29 @@
         elements.forEach((element) => {
 
             observer.observe(element);
+
+        });
+
+
+        /* =========================
+           NAVBAR ON SCROLL
+        ========================= */
+
+        const navbar =
+            document.getElementById("navbar");
+
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 40) {
+
+                navbar.classList.add("scrolled");
+
+            } else {
+
+                navbar.classList.remove("scrolled");
+
+            }
 
         });
 
