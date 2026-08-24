@@ -1035,7 +1035,7 @@
                     </h3>
 
                     <div class="work-role">
-                        Store Management
+                        Store Manager 
                     </div>
 
                     <div class="work-date">
