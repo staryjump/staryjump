@@ -415,7 +415,7 @@
 
             grid-template-columns: 280px 1fr;
 
-            min-height: 220px;
+            min-height: 200px;
 
             overflow: hidden;
 
