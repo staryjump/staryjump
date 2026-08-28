@@ -1140,7 +1140,7 @@
                 </div>
 
                 <p>
-                    Roblox scripting.
+                    
                 </p>
 
             </div>
@@ -1163,7 +1163,7 @@
                 </div>
 
                 <p>
-                    Maps and environments.
+                    
                 </p>
 
             </div>
@@ -1186,7 +1186,7 @@
                 </div>
 
                 <p>
-                    Web design.
+                    
                 </p>
 
             </div>
@@ -1209,7 +1209,7 @@
                 </div>
 
                 <p>
-                    Web development.
+                    
                 </p>
 
             </div>
