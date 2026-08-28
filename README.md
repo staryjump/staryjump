@@ -1333,7 +1333,7 @@
         </h3>
 
         <div class="work-role">
-            Junior Corporate Rang
+            Junior Corporate 
         </div>
 
         <div class="work-date">
